@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
+use RandomUser\Contract\UserModelInterface;
+use RandomUser\Model\MysqlUserModel;
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
@@ -105,6 +109,12 @@ $app->configure('app');
 | can respond to, as well as the controllers that may handle them.
 |
 */
+
+$app->bind(UserModelInterface::class, function ($app) {
+    return new MysqlUserModel(
+        DB::table('randomusers')
+    );
+});
 
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
