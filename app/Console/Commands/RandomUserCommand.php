@@ -4,11 +4,11 @@ namespace App\Console\Commands;
 
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
-use RandomUser\Model\MysqlUserModel;
-use RandomUser\Model\UserLoaderModel;
+use Illuminate\Support\Facades\App;
 use RandomUser\Command\UserLoader;
+use RandomUser\Contract\UserModelInterface;
 use RandomUser\Controller\UserLoader as UserLoaderController;
+use RandomUser\Model\UserLoaderModel;
 
 class RandomUserCommand extends Command
 {
@@ -33,9 +33,7 @@ class RandomUserCommand extends Command
                 new UserLoaderModel(
                     new Client()
                 ),
-                new MysqlUserModel(
-                    DB::table('randomusers')
-                )
+                App::make(UserModelInterface::class)
             )
         );
 
