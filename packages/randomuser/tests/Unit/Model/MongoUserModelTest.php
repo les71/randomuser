@@ -1,8 +1,11 @@
 <?php
 
+namespace RandomUser\Tests\Unit\Domain\Model;
+
 use MongoDB\Collection;
 use RandomUser\Domain\User;
 use RandomUser\Model\MongoUserModel;
+use TestCase;
 
 class MongoUserModelTest extends TestCase
 {

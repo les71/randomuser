@@ -20,11 +20,11 @@ class ResultTest extends TestCase
     public function DTOProvider(): array
     {
         return [
-            [
+            'OK test' => [
                 'resultObject' => new Result(Result::RESULT_OK),
                 'expectedResult' => 'OK'
             ],
-            [
+            'ERR test' => [
                 'resultObject' => new Result(Result::RESULT_ERR),
                 'expectedResult' => 'FAILED'
             ]

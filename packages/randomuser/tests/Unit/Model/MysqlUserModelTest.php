@@ -1,8 +1,11 @@
 <?php
 
+namespace RandomUser\Tests\Unit\Domain\Model;
+
 use Illuminate\Database\Query\Builder;
 use RandomUser\Domain\User;
 use RandomUser\Model\MysqlUserModel;
+use TestCase;
 
 class MysqlUserModelTest extends TestCase
 {

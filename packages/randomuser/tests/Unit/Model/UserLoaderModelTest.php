@@ -1,11 +1,14 @@
 <?php
 
+namespace RandomUser\Tests\Unit\Domain\Model;
+
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\TransferException;
 use Psr\Http\Message\ResponseInterface;
 use RandomUser\Domain\User;
 use RandomUser\Exception\LoadErrorException;
 use RandomUser\Model\UserLoaderModel;
+use TestCase;
 
 class UserLoaderModelTest extends TestCase
 {
