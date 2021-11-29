@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
 use Laravel\Lumen\Routing\Controller as BaseController;
+use RandomUser\Command\UserLoader;
 use RandomUser\Infrastructure\MongoCollection;
 use RandomUser\Model\MongoUserModel;
 use RandomUser\Model\UserLoaderModel;
-use RandomUser\Command\UserLoader;
 
 class RandomUserController extends BaseController
 {
